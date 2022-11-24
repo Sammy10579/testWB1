@@ -1,0 +1,35 @@
+### Get
+GET http://localhost:8080/get?user_id=55044dc2-ec46-4b00-9290-da3f3057be4e
+
+### Set full
+POST localhost:8081/set
+Content-Type: application/json
+
+{
+  "user_id": "55044dc2-ec46-4b00-9290-da3f3057be4e",
+  "postpaid_limit": 1,
+  "spp": 4,
+  "shipping_fee": 1,
+  "return_fee": 1
+}
+
+### Set only one field
+POST localhost:8081/set
+Content-Type: application/json
+
+{
+  "user_id": "55044dc2-ec46-4b00-9290-da3f3057be4e",
+  "postpaid_limit": 1,
+  "spp": 3
+}
+
+
+### Check validation error
+POST localhost:8081/set
+Content-Type: application/json
+
+{
+  "spp": 3
+}
+
+
